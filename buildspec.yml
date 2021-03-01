@@ -2,7 +2,9 @@ version: 0.1
 phases:
   install:
     commands:
-      - aws cloudformation package --template-file sam_template.yml --s3-bucket joseph-codedeploy --output-template-file out_sam_template.yml
+#      - aws cloudformation package --template-file sam_template.yml --s3-bucket joseph-codedeploy --output-template-file out_sam_template.yml
+#      - sam package --template-file sam_template.yml --s3-bucket joseph-codedeploy --output-template-file out_sam_template.yml
+      - sam package --template-file sam_template.yml --resolve-s3 --output-template-file out_sam_template.yml
 artifacts:
   type: zip
   files:
